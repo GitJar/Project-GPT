@@ -1,17 +1,16 @@
-Resep Nusantara — Admin Panel ZIP
-================================
+```md
+# Next.js Prayer Template
 
-Contents:
-- /server : PHP backend API files (config, functions, api endpoints)
-- /client/admin : React admin app (starter)
+Starter project Next.js + TypeScript untuk menampilkan jadwal sholat.
 
-Quick start:
-1. Copy /server to your PHP hosting. Ensure PHP 8+ and mysqli extension enabled.
-2. Create database `resep_nusantara` and import SQL (see sql/init.sql).
-3. Update server/config.php with DB credentials.
-4. Make sure /server/uploads is writable by web server.
-5. For React admin, run `npm install` and `npm run build`, then serve the built files.
+## Setup
+1. Copy `.env.example` -> `.env.local` dan isi `API_BASE_URL` (dari dokumentasi Postman yang kamu punya). Tambahkan `API_KEY` jika perlu.
+2. `npm install`
+3. `npm run dev`
+4. Buka `http://localhost:3000`
 
-Security notes:
-- Replace default admin password immediately.
-- Use HTTPS in production.
+## Catatan
+- Sesuaikan `lib/api.ts` path & transform dengan struktur respons API sebenarnya.
+- Gunakan `/api/proxy/*` untuk menghindari CORS dan menyembunyikan API key.
+- Untuk optimasi, ganti fetch di server dengan `next: { revalidate: ... }` jika ingin ISR.
+```
