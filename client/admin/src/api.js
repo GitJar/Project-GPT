@@ -1,0 +1,2 @@
+export async function apiGet(url){ const res = await fetch(url, {credentials:'include'}); return res.json(); }
+export async function apiPost(url, body){ const opts = {method:'POST',credentials:'include'}; if (body instanceof FormData) opts.body = body; else { opts.headers = {'Content-Type':'application/json'}; opts.body = JSON.stringify(body);} const res = await fetch(url, opts); return res.json(); }
